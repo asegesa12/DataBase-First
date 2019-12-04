@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9f8d34b44364099ae4982669d41c6ba" Name="Diagram1">
+        <EntityTypeShape EntityType="EkkoModel.cargos" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.departamentos" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.empleados" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.entradaEmpleados" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.licencias" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.nomina" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.permisos" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.salidaEmpleado" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EkkoModel.vacaciones" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <AssociationConnector Association="EkkoModel.fk_emp_car" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_emp_dep" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_ent_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_lic_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_per_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_sal_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="EkkoModel.fk_vac_emp" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
