@@ -15,10 +15,24 @@ namespace ResourcesFirst.Controllers
         private EkkoEntities db = new EkkoEntities();
 
         // GET: empleados
-        public ActionResult Index()
+        public ActionResult Index(string busqueda)
         {
             var empleados = db.empleados.Include(e => e.cargos).Include(e => e.departamentos);
-            return View(empleados.ToList());
+
+            ViewData["CurrentFilter"] = busqueda;
+
+            var lista = from x in db.empleados
+                        select x;
+
+            if (String.IsNullOrEmpty(busqueda))
+            {
+                return View(db.empleados.ToList());
+            }
+            else
+            {
+                lista = lista.Where(x => x.nombre.Contains(busqueda) || x.codigoEmpleado.Contains(busqueda));
+                return View(lista);
+            }
         }
 
         // GET: empleados/Details/5
