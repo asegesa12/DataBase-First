@@ -30,7 +30,7 @@ namespace ResourcesFirst.Controllers
             }
             else
             {
-                lista = lista.Where(x => x.nombre.Contains(busqueda) || x.codigoEmpleado.Contains(busqueda));
+                lista = lista.Where(x => x.nombre.Contains(busqueda) || x.departamentos.codigoDepartamento.Contains(busqueda));
                 return View(lista);
             }
         }
