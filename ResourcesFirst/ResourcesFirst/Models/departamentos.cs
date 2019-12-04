@@ -11,7 +11,8 @@ namespace ResourcesFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class departamentos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,13 @@ namespace ResourcesFirst.Models
         {
             this.empleados = new HashSet<empleados>();
         }
-    
+        [Required]
         public int id_departamento { get; set; }
+        [Required]
         public string codigoDepartamento { get; set; }
+        [Required]
         public string nombre { get; set; }
+        [Required]
         public string encargado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

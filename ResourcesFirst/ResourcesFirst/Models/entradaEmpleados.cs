@@ -11,10 +11,13 @@ namespace ResourcesFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class entradaEmpleados
     {
+        [Required]
         public int id_entrada { get; set; }
+        [Required]
         public string mes { get; set; }
         public int id_empleado { get; set; }
     

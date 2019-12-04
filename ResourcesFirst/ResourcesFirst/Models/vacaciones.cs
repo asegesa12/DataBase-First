@@ -11,13 +11,19 @@ namespace ResourcesFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vacaciones
     {
+        [Required]
         public int id_vacaciones { get; set; }
+        [Required]
         public Nullable<System.DateTime> desde { get; set; }
+        [Required]
         public Nullable<System.DateTime> hasta { get; set; }
+        [Required]
         public string año { get; set; }
+
         public string comentario { get; set; }
         public int id_empleado { get; set; }
     

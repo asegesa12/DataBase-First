@@ -11,7 +11,8 @@ namespace ResourcesFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class empleados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,15 +24,23 @@ namespace ResourcesFirst.Models
             this.salidaEmpleado = new HashSet<salidaEmpleado>();
             this.vacaciones = new HashSet<vacaciones>();
         }
-    
+        [Required]
         public int id { get; set; }
+        [Required]
         public string codigoEmpleado { get; set; }
+        [Required]
         public string nombre { get; set; }
+        [Required]
         public string apellido { get; set; }
+        [Required]
         public string telefono { get; set; }
+        [Required]
         public Nullable<System.DateTime> fechaIngreso { get; set; }
+        [Required]
         public Nullable<int> salario { get; set; }
+        [Required]
         public string estado { get; set; }
+        
         public int id_departamento { get; set; }
         public int id_cargos { get; set; }
     

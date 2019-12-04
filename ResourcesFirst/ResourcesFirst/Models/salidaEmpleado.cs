@@ -11,12 +11,17 @@ namespace ResourcesFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class salidaEmpleado
     {
+        [Required]
         public int id_salida { get; set; }
+        [Required]
         public string tipoSalida { get; set; }
+        [Required]
         public string motivo { get; set; }
+        [Required]
         public Nullable<System.DateTime> fechaSalida { get; set; }
         public int id_empleado { get; set; }
     
