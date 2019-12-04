@@ -2,15 +2,22 @@
 
 @{
     ViewBag.Title = "Create";
+
+    ViewBag.Title = "Create";
+    var lista = new List<SelectListItem>();
+    lista.Add(new SelectListItem() { Value = "2017", Text = "2017" });
+    lista.Add(new SelectListItem() { Value = "2018", Text = "2018" });
+    lista.Add(new SelectListItem() { Value = "2019", Text = "2019" });
+
 }
 
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>vacaciones</h4>
         <hr />
@@ -18,7 +25,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.desde, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.desde, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.desde, new { htmlAttributes = new { @class = "datepicker" } })
                 @Html.ValidationMessageFor(model => model.desde, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.hasta, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.hasta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.hasta, new { htmlAttributes = new { @class = "datepicker" } })
                 @Html.ValidationMessageFor(model => model.hasta, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.año, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.año, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.año,lista, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.año, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +55,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_empleado, "id_empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_empleado, "ID Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_empleado", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_empleado, "", new { @class = "text-danger" })
@@ -63,10 +70,27 @@
     </div>
 }
 
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+
+@section scripts{
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+
+
+    </script>
+
+}
+
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

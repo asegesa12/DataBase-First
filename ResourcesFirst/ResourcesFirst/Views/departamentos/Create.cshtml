@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.id_departamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_departamento, "Id Departamento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.id_departamento, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.id_departamento, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.codigoDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.codigoDepartamento, "Codigo de departamento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.codigoDepartamento, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.codigoDepartamento, "", new { @class = "text-danger" })
